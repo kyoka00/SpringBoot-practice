@@ -1,4 +1,4 @@
-package com.example.demo.entity.controller;
+package com.example.demo.controller;
 
 public class ProductForm {
 
