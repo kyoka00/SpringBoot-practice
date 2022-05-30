@@ -4,7 +4,16 @@ public class Product {
 	private Integer productId;
 	private String productName;
 	private Integer price;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Product() {
 		
 	}
@@ -15,6 +24,7 @@ public class Product {
 		this.price = price;
 	}
 
+	
 	public Integer getProductId() {
 		return productId;
 	}
@@ -39,9 +49,4 @@ public class Product {
 		this.price = price;
 	}
 	
-	public String getProductInfo() {
-		return ( "Product[ product_id: " + getProductId() +  
-				", product_name" + getProductName() + 
-				", price;" + getPrice() +"]");
-	}
 }
