@@ -10,9 +10,10 @@
 <title>result</title>
 </head>
 <body>
-<p>結果画面</p>
+<h2>検索画面</h2>
 <p>${msg}</p>
-<p>商品: ${fn:escapeXml(product.getProductName())}</p>
-<p>金額: ${fn:escapeXml(product.getPrice())}</p>
+<p>product_id: ${fn:escapeXml(product.getProductId())}</p>
+<p>product_name: ${fn:escapeXml(product.getProductName())}</p>
+<p>price: ${fn:escapeXml(product.getPrice())}</p>
 </body>
 </html>

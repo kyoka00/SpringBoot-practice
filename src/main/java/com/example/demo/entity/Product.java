@@ -4,15 +4,7 @@ public class Product {
 	private Integer productId;
 	private String productName;
 	private Integer price;
-	private String name;
 	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public Product() {
 		

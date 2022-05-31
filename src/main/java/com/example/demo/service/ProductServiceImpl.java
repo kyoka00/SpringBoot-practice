@@ -1,12 +1,10 @@
-package com.example.demo.entity;
-
-import java.util.List;
+package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ProductDao;
-import com.example.demo.service.ProductService;
+import com.example.demo.entity.Product;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -14,7 +12,7 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductDao productDao;
 	
-	public List<Product>findAll(){
-		return productDao.findAll();
+	public Product findById(Integer id){
+		return productDao.findById(id);
 	}
 }

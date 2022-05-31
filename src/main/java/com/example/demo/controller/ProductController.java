@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +25,16 @@ public class ProductController {
     
     @RequestMapping(value="/productResult", method=RequestMethod.POST)
     public String post(@ModelAttribute("res")ProductForm form, Model model) {
-    	List<Product> p = productService.findAll();
-        model.addAttribute("productList",p);
-        return "result";
+    	Product p = productService.findById(form.getId());
+    	if(p== null) {
+    		model.addAttribute("msg","対象のデータはありません");
+    		return "index";
+    	}else {
+    		model.addAttribute("product",p);
+    		model.addAttribute("msg","データを取得しました");
+    		return "result";
+    		
+    	}
+    	
     }
 }

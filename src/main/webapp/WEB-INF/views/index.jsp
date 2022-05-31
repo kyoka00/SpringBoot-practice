@@ -9,6 +9,8 @@
 <title>index</title>
 </head>
 <body>
+<h1>検索条件を入力してください</h1>
+<p>${msg}</p>
 <form:form action ="productResult" modelAttribute = "res">
 	<label>product_id</label>
 	<form:input path ="id"/><br>

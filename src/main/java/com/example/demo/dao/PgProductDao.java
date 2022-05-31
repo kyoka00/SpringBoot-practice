@@ -25,6 +25,8 @@ public class PgProductDao implements ProductDao{
 		param.addValue("id", id);
 		
 		List<Product> resultList = jdbcTemplate.query(sql, param, new BeanPropertyRowMapper<Product>(Product.class));
+		
+		return resultList.isEmpty() ? null :resultList.get(0);
 	}
 	
 }
