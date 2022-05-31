@@ -11,7 +11,7 @@
 </head>
 <body>
 <p>結果画面</p>
-<p>${fn:escapeXml(userName)}さんが下記の商品を選択しました</p>
+<p>${msg}</p>
 <p>商品: ${fn:escapeXml(product.getProductName())}</p>
 <p>金額: ${fn:escapeXml(product.getPrice())}</p>
 </body>

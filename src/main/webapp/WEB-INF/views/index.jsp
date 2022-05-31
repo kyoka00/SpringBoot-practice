@@ -10,11 +10,9 @@
 </head>
 <body>
 <form:form action ="productResult" modelAttribute = "res">
-	<form:input path ="userName"/>
-	<form:select path = "id">
-	< <form:options items="${productList}" itemLabel="productName" itemValue="productId" />
-	</form:select>
-	<form:button>送信</form:button>
+	<label>product_id</label>
+	<form:input path ="id"/><br>
+	<form:button>検索</form:button>
 </form:form>
 </body>
 </html>
