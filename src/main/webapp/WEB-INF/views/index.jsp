@@ -9,12 +9,8 @@
 <title>index</title>
 </head>
 <body>
-<form:form action ="productResult" modelAttribute = "res">
-	<form:input path ="userName"/>
-	<form:select path = "id">
-	< <form:options items="${productList}" itemLabel="productName" itemValue="productId" />
-	</form:select>
-	<form:button>送信</form:button>
-</form:form>
+
+<a href="start">始める</a>
+
 </body>
 </html>
