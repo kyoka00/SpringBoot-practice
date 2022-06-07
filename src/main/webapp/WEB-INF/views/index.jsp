@@ -12,9 +12,12 @@
 <h1>検索条件を入力してください</h1>
 <p>${msg}</p>
 <form:form action ="productResult" modelAttribute = "res">
-	<label>product_id</label>
-	<form:input path ="id"/><br>
-	<form:button>検索</form:button>
+	<label>product_name</label>
+	<form:input type= "text" path ="name"/><br>
+	<label>price:</label>
+	<form:input path ="price" type ="number"/><br>
+	<form:button name ="search">検索</form:button>
+	<form:button name = "register">登録</form:button>
 </form:form>
 </body>
 </html>
