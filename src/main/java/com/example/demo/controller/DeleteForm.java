@@ -1,16 +1,15 @@
 package com.example.demo.controller;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class ProductForm {
+public class DeleteForm {
 	@NotNull
 	private Integer id;
 
-	@NotBlank
+	
 	private String name;
 
-	@NotNull
+	
 	private Integer price;
 
 	public Integer getId() {
@@ -36,10 +35,10 @@ public class ProductForm {
 	public void setPrice(Integer price) {
 		this.price = price;
 		}
-	public ProductForm() {
+	public DeleteForm() {
 		
 	}
-	public ProductForm(Integer product_id, String name, Integer price) {
+	public DeleteForm(Integer product_id, String name, Integer price) {
 		this.id=product_id;
 		this.name =name;
 		this.price = price;

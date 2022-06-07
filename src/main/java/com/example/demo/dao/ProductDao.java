@@ -3,6 +3,9 @@ import com.example.demo.entity.Product;
 
 public interface ProductDao {
 
-		public Product findById(Integer id);
+		public int delete(Integer id);
+		public int update(Product p);
+		public Product select (Integer id);
+		
 	}
 
