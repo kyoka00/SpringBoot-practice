@@ -1,10 +1,17 @@
 package com.example.demo.controller;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class ProductForm {
 
 
     private Integer id;
+    
+    @NotBlank
     private String name;
+    
+    @NotNull
     private Integer price;
     
 	public Integer getId() {

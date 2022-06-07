@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,12 +19,13 @@ import com.example.demo.service.ProductService;
 
 @Controller
 public class ProductController {
-	
+	@Autowired
+	MessageSource message;
 	@Autowired
 	ProductService productService;
 	
     @RequestMapping("/res")
-    public String index(@ModelAttribute("res") ProductForm form,Model model) {
+    public String index(@ModelAttribute("res") ProductForm form, Model model) {
     	
         return "index";
     }
@@ -49,11 +53,10 @@ public class ProductController {
 		}
 
 		if (plist == null || plist.equals(null)) {
-			model.addAttribute("msg","対象のデータはありません");
+			model.addAttribute("msg",message.getMessage("msg_error", null, Locale.getDefault()));
     		return "index";
     	}else {
     		model.addAttribute("product",plist);
-    		model.addAttribute("msg","データを取得しました");
     		return "searchResult";
     		
     	}
@@ -61,7 +64,11 @@ public class ProductController {
     }
     
     @RequestMapping(value="/productResult", method=RequestMethod.POST ,params="register")
-    public String add(@ModelAttribute("res")ProductForm form, BindingResult bindingResult, Model model) {
+    public String add(@Validated @ModelAttribute("res") ProductForm form, BindingResult bindingResult, Model model) {
+    	if (bindingResult.hasErrors()) {
+	        return "index";
+	    }
+    	
     	String name = form.getName();
     	Integer price = form.getPrice();
     	var count= productService.insert(name, price);

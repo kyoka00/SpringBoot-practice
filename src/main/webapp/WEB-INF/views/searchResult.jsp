@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +12,11 @@
 </head>
 <body>
 <h2>検索結果</h2>
-<p>${msg}</p>
 <table border="1">
 <tr>
-<th>product_id </th>
-<th>product_name</th>
-<th>price</th>
+<th><fmt:message key = "id"/></th>
+<th><fmt:message key = "name"/></th>
+<th><fmt:message key = "price"/></th>
 </tr>
 <c:forEach var="product" items="${product}">
 <tr>
@@ -26,6 +26,6 @@
 </tr>
 </c:forEach>
 </table>
-<a href="back">戻る</a>
+<a href="back"><fmt:message key = "back"/></a>
 </body>
 </html>
